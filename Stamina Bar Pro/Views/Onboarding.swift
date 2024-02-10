@@ -70,11 +70,7 @@ struct PageView: View {
             }
         }
         .onAppear {
-            if pageNumber == 2 { // Request authorization on the second page
-                workoutManager.requestAuthorization { authorized, error in
-                    // Handle the authorization result
-                }
-            }
+                workoutManager.requestAuthorization { authorized, error in }
         }
     }
 }
