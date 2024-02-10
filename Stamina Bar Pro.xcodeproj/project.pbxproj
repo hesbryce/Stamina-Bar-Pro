@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA542C712B5F874700F0DFBC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA542C702B5F874700F0DFBC /* ChatViewModel.swift */; };
+		DA542C732B5F876D00F0DFBC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA542C722B5F876D00F0DFBC /* ChatView.swift */; };
+		DA542C752B5F87E600F0DFBC /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA542C742B5F87E600F0DFBC /* OpenAIService.swift */; };
+		DA542C782B5F880F00F0DFBC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DA542C772B5F880F00F0DFBC /* Alamofire */; };
+		DA542C7A2B5F883700F0DFBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA542C792B5F883700F0DFBC /* Constants.swift */; };
+		DA55310F2B45FE9B004AF31F /* Stamina_Bar_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55310E2B45FE9B004AF31F /* Stamina_Bar_ProApp.swift */; };
+		DA5531132B45FE9C004AF31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5531122B45FE9C004AF31F /* Assets.xcassets */; };
+		DA5531162B45FE9C004AF31F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5531152B45FE9C004AF31F /* Preview Assets.xcassets */; };
+		DA5531202B45FE9C004AF31F /* Stamina_Bar_ProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55311F2B45FE9C004AF31F /* Stamina_Bar_ProTests.swift */; };
+		DA55312A2B45FE9C004AF31F /* Stamina_Bar_ProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5531292B45FE9C004AF31F /* Stamina_Bar_ProUITests.swift */; };
+		DA55312C2B45FE9C004AF31F /* Stamina_Bar_ProUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55312B2B45FE9C004AF31F /* Stamina_Bar_ProUITestsLaunchTests.swift */; };
+		DA55313A2B45FECA004AF31F /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA5531392B45FECA004AF31F /* OpenAISwift */; };
+		DA55313C2B46E72F004AF31F /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55313B2B46E72F004AF31F /* Onboarding.swift */; };
+		DA55313F2B4A29E4004AF31F /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA55313E2B4A29E4004AF31F /* WorkoutManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA55311C2B45FE9C004AF31F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA5531032B45FE9B004AF31F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA55310A2B45FE9B004AF31F;
+			remoteInfo = "Stamina Bar Pro";
+		};
+		DA5531262B45FE9C004AF31F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA5531032B45FE9B004AF31F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA55310A2B45FE9B004AF31F;
+			remoteInfo = "Stamina Bar Pro";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA542C702B5F874700F0DFBC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		DA542C722B5F876D00F0DFBC /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		DA542C742B5F87E600F0DFBC /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		DA542C792B5F883700F0DFBC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA55310B2B45FE9B004AF31F /* Stamina Bar Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stamina Bar Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA55310E2B45FE9B004AF31F /* Stamina_Bar_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamina_Bar_ProApp.swift; sourceTree = "<group>"; };
+		DA5531122B45FE9C004AF31F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA5531152B45FE9C004AF31F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA55311B2B45FE9C004AF31F /* Stamina Bar ProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stamina Bar ProTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA55311F2B45FE9C004AF31F /* Stamina_Bar_ProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamina_Bar_ProTests.swift; sourceTree = "<group>"; };
+		DA5531252B45FE9C004AF31F /* Stamina Bar ProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stamina Bar ProUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA5531292B45FE9C004AF31F /* Stamina_Bar_ProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamina_Bar_ProUITests.swift; sourceTree = "<group>"; };
+		DA55312B2B45FE9C004AF31F /* Stamina_Bar_ProUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamina_Bar_ProUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DA55313B2B46E72F004AF31F /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		DA55313D2B4A28FD004AF31F /* Stamina Bar Pro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stamina Bar Pro.entitlements"; sourceTree = "<group>"; };
+		DA55313E2B4A29E4004AF31F /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA5531082B45FE9B004AF31F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA55313A2B45FECA004AF31F /* OpenAISwift in Frameworks */,
+				DA542C782B5F880F00F0DFBC /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5531182B45FE9C004AF31F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5531222B45FE9C004AF31F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA5531022B45FE9B004AF31F = {
+			isa = PBXGroup;
+			children = (
+				DA55310D2B45FE9B004AF31F /* Stamina Bar Pro */,
+				DA55311E2B45FE9C004AF31F /* Stamina Bar ProTests */,
+				DA5531282B45FE9C004AF31F /* Stamina Bar ProUITests */,
+				DA55310C2B45FE9B004AF31F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA55310C2B45FE9B004AF31F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA55310B2B45FE9B004AF31F /* Stamina Bar Pro.app */,
+				DA55311B2B45FE9C004AF31F /* Stamina Bar ProTests.xctest */,
+				DA5531252B45FE9C004AF31F /* Stamina Bar ProUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA55310D2B45FE9B004AF31F /* Stamina Bar Pro */ = {
+			isa = PBXGroup;
+			children = (
+				DA55313D2B4A28FD004AF31F /* Stamina Bar Pro.entitlements */,
+				DA55310E2B45FE9B004AF31F /* Stamina_Bar_ProApp.swift */,
+				DA9170DF2B6638C000599913 /* Views */,
+				DA9170DE2B6638AB00599913 /* ViewModels */,
+				DA9170DD2B66388600599913 /* Models */,
+				DA5531122B45FE9C004AF31F /* Assets.xcassets */,
+				DA5531142B45FE9C004AF31F /* Preview Content */,
+			);
+			path = "Stamina Bar Pro";
+			sourceTree = "<group>";
+		};
+		DA5531142B45FE9C004AF31F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DA5531152B45FE9C004AF31F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DA55311E2B45FE9C004AF31F /* Stamina Bar ProTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA55311F2B45FE9C004AF31F /* Stamina_Bar_ProTests.swift */,
+			);
+			path = "Stamina Bar ProTests";
+			sourceTree = "<group>";
+		};
+		DA5531282B45FE9C004AF31F /* Stamina Bar ProUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA5531292B45FE9C004AF31F /* Stamina_Bar_ProUITests.swift */,
+				DA55312B2B45FE9C004AF31F /* Stamina_Bar_ProUITestsLaunchTests.swift */,
+			);
+			path = "Stamina Bar ProUITests";
+			sourceTree = "<group>";
+		};
+		DA9170DD2B66388600599913 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA542C792B5F883700F0DFBC /* Constants.swift */,
+				DA542C742B5F87E600F0DFBC /* OpenAIService.swift */,
+				DA55313E2B4A29E4004AF31F /* WorkoutManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DA9170DE2B6638AB00599913 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DA542C702B5F874700F0DFBC /* ChatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DA9170DF2B6638C000599913 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA542C722B5F876D00F0DFBC /* ChatView.swift */,
+				DA55313B2B46E72F004AF31F /* Onboarding.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA55310A2B45FE9B004AF31F /* Stamina Bar Pro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA55312F2B45FE9C004AF31F /* Build configuration list for PBXNativeTarget "Stamina Bar Pro" */;
+			buildPhases = (
+				DA5531072B45FE9B004AF31F /* Sources */,
+				DA5531082B45FE9B004AF31F /* Frameworks */,
+				DA5531092B45FE9B004AF31F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Stamina Bar Pro";
+			packageProductDependencies = (
+				DA5531392B45FECA004AF31F /* OpenAISwift */,
+				DA542C772B5F880F00F0DFBC /* Alamofire */,
+			);
+			productName = "Stamina Bar Pro";
+			productReference = DA55310B2B45FE9B004AF31F /* Stamina Bar Pro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA55311A2B45FE9C004AF31F /* Stamina Bar ProTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5531322B45FE9C004AF31F /* Build configuration list for PBXNativeTarget "Stamina Bar ProTests" */;
+			buildPhases = (
+				DA5531172B45FE9C004AF31F /* Sources */,
+				DA5531182B45FE9C004AF31F /* Frameworks */,
+				DA5531192B45FE9C004AF31F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA55311D2B45FE9C004AF31F /* PBXTargetDependency */,
+			);
+			name = "Stamina Bar ProTests";
+			productName = "Stamina Bar ProTests";
+			productReference = DA55311B2B45FE9C004AF31F /* Stamina Bar ProTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA5531242B45FE9C004AF31F /* Stamina Bar ProUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA5531352B45FE9C004AF31F /* Build configuration list for PBXNativeTarget "Stamina Bar ProUITests" */;
+			buildPhases = (
+				DA5531212B45FE9C004AF31F /* Sources */,
+				DA5531222B45FE9C004AF31F /* Frameworks */,
+				DA5531232B45FE9C004AF31F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA5531272B45FE9C004AF31F /* PBXTargetDependency */,
+			);
+			name = "Stamina Bar ProUITests";
+			productName = "Stamina Bar ProUITests";
+			productReference = DA5531252B45FE9C004AF31F /* Stamina Bar ProUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA5531032B45FE9B004AF31F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					DA55310A2B45FE9B004AF31F = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					DA55311A2B45FE9C004AF31F = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = DA55310A2B45FE9B004AF31F;
+					};
+					DA5531242B45FE9C004AF31F = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = DA55310A2B45FE9B004AF31F;
+					};
+				};
+			};
+			buildConfigurationList = DA5531062B45FE9B004AF31F /* Build configuration list for PBXProject "Stamina Bar Pro" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA5531022B45FE9B004AF31F;
+			packageReferences = (
+				DA5531382B45FECA004AF31F /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				DA542C762B5F880F00F0DFBC /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = DA55310C2B45FE9B004AF31F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA55310A2B45FE9B004AF31F /* Stamina Bar Pro */,
+				DA55311A2B45FE9C004AF31F /* Stamina Bar ProTests */,
+				DA5531242B45FE9C004AF31F /* Stamina Bar ProUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA5531092B45FE9B004AF31F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5531162B45FE9C004AF31F /* Preview Assets.xcassets in Resources */,
+				DA5531132B45FE9C004AF31F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5531192B45FE9C004AF31F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5531232B45FE9C004AF31F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA5531072B45FE9B004AF31F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA542C752B5F87E600F0DFBC /* OpenAIService.swift in Sources */,
+				DA55313C2B46E72F004AF31F /* Onboarding.swift in Sources */,
+				DA55313F2B4A29E4004AF31F /* WorkoutManager.swift in Sources */,
+				DA542C712B5F874700F0DFBC /* ChatViewModel.swift in Sources */,
+				DA542C732B5F876D00F0DFBC /* ChatView.swift in Sources */,
+				DA55310F2B45FE9B004AF31F /* Stamina_Bar_ProApp.swift in Sources */,
+				DA542C7A2B5F883700F0DFBC /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5531172B45FE9C004AF31F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA5531202B45FE9C004AF31F /* Stamina_Bar_ProTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5531212B45FE9C004AF31F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA55312C2B45FE9C004AF31F /* Stamina_Bar_ProUITestsLaunchTests.swift in Sources */,
+				DA55312A2B45FE9C004AF31F /* Stamina_Bar_ProUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA55311D2B45FE9C004AF31F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA55310A2B45FE9B004AF31F /* Stamina Bar Pro */;
+			targetProxy = DA55311C2B45FE9C004AF31F /* PBXContainerItemProxy */;
+		};
+		DA5531272B45FE9C004AF31F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA55310A2B45FE9B004AF31F /* Stamina Bar Pro */;
+			targetProxy = DA5531262B45FE9C004AF31F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DA55312D2B45FE9C004AF31F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA55312E2B45FE9C004AF31F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA5531302B45FE9C004AF31F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Stamina Bar Pro/Stamina Bar Pro.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "\"Stamina Bar Pro/Preview Content\"";
+				DEVELOPMENT_TEAM = 339H39SFM9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Stamina Bar Pro would like to access and update Health data listed above to help you track your mental and physical health goals.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow Stamina Bar Pro to write new data to Health ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zbellis-studios.Stamina-Bar-Pro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DA5531312B45FE9C004AF31F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Stamina Bar Pro/Stamina Bar Pro.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_ASSET_PATHS = "\"Stamina Bar Pro/Preview Content\"";
+				DEVELOPMENT_TEAM = 339H39SFM9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Stamina Bar Pro would like to access and update Health data listed above to help you track your mental and physical health goals.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow Stamina Bar Pro to write new data to Health ";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zbellis-studios.Stamina-Bar-Pro";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DA5531332B45FE9C004AF31F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 339H39SFM9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zbellis-studios.Stamina-Bar-ProTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stamina Bar Pro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stamina Bar Pro";
+			};
+			name = Debug;
+		};
+		DA5531342B45FE9C004AF31F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 339H39SFM9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zbellis-studios.Stamina-Bar-ProTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stamina Bar Pro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stamina Bar Pro";
+			};
+			name = Release;
+		};
+		DA5531362B45FE9C004AF31F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 339H39SFM9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zbellis-studios.Stamina-Bar-ProUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Stamina Bar Pro";
+			};
+			name = Debug;
+		};
+		DA5531372B45FE9C004AF31F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 339H39SFM9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "zbellis-studios.Stamina-Bar-ProUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Stamina Bar Pro";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA5531062B45FE9B004AF31F /* Build configuration list for PBXProject "Stamina Bar Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA55312D2B45FE9C004AF31F /* Debug */,
+				DA55312E2B45FE9C004AF31F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA55312F2B45FE9C004AF31F /* Build configuration list for PBXNativeTarget "Stamina Bar Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5531302B45FE9C004AF31F /* Debug */,
+				DA5531312B45FE9C004AF31F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA5531322B45FE9C004AF31F /* Build configuration list for PBXNativeTarget "Stamina Bar ProTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5531332B45FE9C004AF31F /* Debug */,
+				DA5531342B45FE9C004AF31F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA5531352B45FE9C004AF31F /* Build configuration list for PBXNativeTarget "Stamina Bar ProUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA5531362B45FE9C004AF31F /* Debug */,
+				DA5531372B45FE9C004AF31F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA542C762B5F880F00F0DFBC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.4;
+			};
+		};
+		DA5531382B45FECA004AF31F /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA542C772B5F880F00F0DFBC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA542C762B5F880F00F0DFBC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DA5531392B45FECA004AF31F /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA5531382B45FECA004AF31F /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DA5531032B45FE9B004AF31F /* Project object */;
+}
