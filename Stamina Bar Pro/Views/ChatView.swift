@@ -56,17 +56,39 @@ struct ChatView: View {
         .padding()
     }
     
+    
     func messageView(message: Message) -> some View {
-        HStack {
-            if message.role == .user { Spacer() }
+        HStack(alignment: .top, spacing: 10) {
+            if message.role == .assistant {
+                Image("Splash")
+                    .resizable() // Allows the image to be resized
+                    .scaledToFit() // Keeps the aspect ratio
+                    .frame(width: 30, height: 30) // Specify the frame to control the size
+                    .padding(5) // Provides visual spacing around the icon
+            } else {
+                Spacer() // Pushes user messages to the opposite side
+            }
+            
             Text(message.content)
                 .padding()
                 .background(message.role == .user ? Color.blue : Color.gray.opacity(0.2))
                 .cornerRadius(15)
                 .foregroundColor(message.role == .user ? .white : .black)
-            if message.role == .assistant { Spacer() }
+            
+            if message.role == .user {
+                Image(systemName: "person.crop.circle.fill")
+                    .resizable() // Makes the system image resizable
+                    .scaledToFit() // Keeps the aspect ratio intact
+                    .frame(width: 30, height: 30) // Ensures the system image matches the custom image size
+                    .foregroundColor(.blue)
+                    .padding(5)
+            } else {
+                Spacer() // Ensures alignment of the assistant's messages
+            }
         }
     }
+
+
 }
 
 // Assume ViewModel and Message definitions are provided
