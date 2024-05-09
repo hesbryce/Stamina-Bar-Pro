@@ -44,17 +44,49 @@ struct SimpleEntry: TimelineEntry {
 
 struct Stamina_Bar_Apple_Watch_ComplicationsEntryView : View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("Time:")
-                Text(entry.date, style: .time)
-            }
-        
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        switch widgetFamily {
+       
+       
+        case .accessoryCircular:
+            Image("StaminaBarWidget")
+                .resizable()
+                .scaledToFit()
+                .padding()
+        case .accessoryRectangular:
+            Image("StaminaBarWidget")
+                .resizable()
+                .scaledToFit()
+                .padding()
+        case .accessoryInline:
+            Image("StaminaBarWidget")
+                .resizable()
+                .scaledToFit()
+                .padding()
+        case .accessoryCorner:
+            Image("StaminaBarWidget")
+                .resizable()
+                .scaledToFit()
+                .padding()
+        default:
+            Image("StaminaBarWidget")
+                .resizable()
+                .scaledToFit()
+                .padding()
+            
         }
+//
+//        VStack {
+//            HStack {
+//                Text("Time:")
+//                Text(entry.date, style: .time)
+//            }
+//
+//            Text("Favorite Emoji:")
+//            Text(entry.configuration.favoriteEmoji)
+//        }
     }
 }
 

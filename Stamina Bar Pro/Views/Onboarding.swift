@@ -16,23 +16,21 @@ struct OnboardingView: View {
     var body: some View {
         TabView(selection: $currentPage) {
                         
-            PageView(pageNumber: 0, title: "Set up Health Access", subTitle: "Stamina Bar Pro uses Apple Health, an offical source for managing health data. When prompted ensure, to Turn On All for reading for health stats.", imageName: "Icon - Apple Health copy", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
                         
             let attributedString = try! AttributedString(markdown:
             """
             Stamina Bar Pro cites information trusted resources that will be included at the end of each response. Resources are cited from but not limited to American Heart Association [AHA](https://www.heart.org/en/healthy-living/fitness/fitness-basics/target-heart-rates), [Mayo Clinic](https://www.mayoclinicproceedings.org), and the American College of Sports Medicine [ACSM](https://www.acsm.org)
             """)
             
-            PageView(pageNumber: 1, title: "Cited Sources", subTitle: attributedString, imageName: "Splash", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             
-            PageView(pageNumber: 2, title: "Set to Go!", subTitle: "You're all set up. Start asking questions to guide your Health+Fitness journey with Stamina Bar Pro", imageName: "check", showsDismissButton: true, shouldShowOnboarding: $shouldShowOnboarding)
+            PageView(title: "A.I. Personal Trainer", subTitle: attributedString, imageName: "Splash", showsDismissButton: true, shouldShowOnboarding: $shouldShowOnboarding)
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+//        .background(Color.gray.gradient)
+        .tabViewStyle(.page)
     }
 }
 
 struct PageView: View {
-    let pageNumber: Int  // Page number
     let title: String
     let subTitle: AttributedString
     let imageName: String
@@ -40,37 +38,43 @@ struct PageView: View {
     @Binding var shouldShowOnboarding: Bool
     @EnvironmentObject var workoutManager: WorkoutManager
     
-    
     var body: some View {
-        VStack (spacing: 20) {
+        VStack(spacing: 20) { // Add spacing between elements
+            Text(title)
+                .font(.system(size: 24, weight: .bold)) // Increase font weight for better emphasis
+                .padding(.top, 40) // Add padding at the top for spacing from the header or status bar
+            
             Image(imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 150, height: 150)
-            Text(title)
-                .font(.system(size: 24))
+                .scaledToFit() // Changed to scaledToFit to maintain the aspect ratio without cropping
+                .frame(width: 200, height: 200) // Increased size for better visibility
+                .padding() // Add padding to give breathing space around the image
+            
             Text(subTitle)
                 .font(.system(size: 18))
                 .foregroundStyle(Color.secondary)
                 .multilineTextAlignment(.center)
-            // Law to dissmiss onboarding
-            if showsDismissButton {
-                
+                .padding(.horizontal) // Add horizontal padding to ensure text doesn't touch the edges
+            
+            if showsDismissButton { // Conditionally show the dismiss button
                 Button(action: {
                     shouldShowOnboarding.toggle()
                 }) {
                     Text("Get Started")
                         .bold()
+                        .frame(minWidth: 0, maxWidth: .infinity) // Make button width to expand
+                        .padding() // Add padding to increase the button's tap area
                         .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(25)
+                        .padding(.horizontal, 50) // Add horizontal padding to button
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50) // Apply to Button, not Text
-                .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.blue]), startPoint: .leading, endPoint: .trailing)) // Apply to Button
-                .cornerRadius(25) // Apply to Button
-                //.shadow(color: .gray, radius: 5, x: 0, y: 5) // Apply to Button
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity) // Make VStack take the full available size
         .onAppear {
-                workoutManager.requestAuthorization { authorized, error in }
+            workoutManager.requestAuthorization { authorized, error in }
         }
     }
 }
+
