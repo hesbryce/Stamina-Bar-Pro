@@ -27,26 +27,25 @@ struct ChatView: View {
             
             // Chat input field and send button
             HStack {
-                TextField("Enter a message...", text: $viewModel.currentInput)
+                TextField("⌨️ Enter a message...", text: $viewModel.currentInput)
                     .padding(10) // Padding inside the text field
                     .background(Color.white) // Background color of the text field
                     .cornerRadius(20) // Rounded corner radius
                     .overlay(
                         RoundedRectangle(cornerRadius: 20) // Overlaying a rounded rectangle for the border
-                            .stroke(Color.gray, lineWidth: 0.5) // Border color and width
+                            .stroke(Color.blue, lineWidth: 1) // Border color and width
                     )
                     .padding(.horizontal, 5) // External padding from the text field to other elements
                     .shadow(color: .gray, radius: 1, x: 0, y: 1) // Adding a shadow for depth
 
                 Button(action: viewModel.sendMessage) {
-                    Image(systemName: "paperplane.fill") // Using a paper plane icon for the send button
-                        .font(.system(size: 22))
-                        .foregroundColor(.white)
-                        .padding(.all, 10) // Give some padding to make the button larger
-                        .background(Circle().fill(Color.blue)) // Circular background with color
-                        .shadow(color: .gray, radius: 3, x: 0, y: 3) // Adding a shadow for depth
+                    Image(systemName: "arrow.up.circle.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(viewModel.currentInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? .gray : .blue) // Change color based on input
+                        .background(Circle().fill(Color.white))
                 }
-                .disabled(viewModel.currentInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) // Disable button if input is empty
+                .disabled(viewModel.currentInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) // Disable button based on input
+
                 
             }
         }
@@ -74,6 +73,7 @@ struct ChatView: View {
                 .background(message.role == .user ? Color.blue : Color.gray.opacity(0.2))
                 .cornerRadius(15)
                 .foregroundColor(message.role == .user ? .white : .black)
+                .textSelection(.enabled)
             
             if message.role == .user {
                 Image(systemName: "person.crop.circle.fill")
