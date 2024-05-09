@@ -14,9 +14,10 @@ struct ChatView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Stamina Bar Pro\n")
+            Text("Stamina Bar Pro")
                 .bold()
                 .font(.title)
+            Divider()
             Text("Use the textbox at the bottom to ask questions about your health stats or create a training plan.")
             
             ScrollView {
