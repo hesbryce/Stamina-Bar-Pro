@@ -12,15 +12,17 @@ import HealthKit
 struct OnboardingView: View {
     @State private var selection = 0
     @Environment(\.presentationMode) var presentationMode
+    @Binding var shouldShowOnboarding: Bool
+
     var body: some View {
         TabView(selection: $selection) {
             // First onboarding screen
             VStack {
-                Text("Welcome to Stamina Bar")
+                Text("Welcome")
                     .font(.largeTitle)
                     .padding()
 
-                Text("Swipe right to learn more")
+                Text("Swipe up to continue")
                     .font(.title3)
                     .foregroundColor(.gray)
             }
@@ -28,14 +30,7 @@ struct OnboardingView: View {
 
             // Second onboarding screen - HealthKit authorization
             VStack {
-                Text("Health Access Required")
-                    .font(.largeTitle)
-                    .padding()
-
-                Text("We need access to your health data like heart rate to personalize your experience.")
-                    .font(.title3)
-                    .padding()
-
+            
                 Button("Authorize HealthKit") {
                     requestHealthKitAuthorization()
                 }

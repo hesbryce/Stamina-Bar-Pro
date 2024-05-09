@@ -5,55 +5,50 @@
 //  Created by Bryce Ellis on 5/8/24.
 //
 
-import HealthKit
 import SwiftUI
+import HealthKit
 
 struct ContentView: View {
-    @State private var isHealthKitAuthorized = false
+    @ObservedObject var healthKitModel = HealthKitModel()
+    let staminaBarView = StaminaBarView()
+    @State private var selectedTab: Int = 0
 
     var body: some View {
-        VStack {
+        TabView(selection: $selectedTab) {
 
-            // Stamina Bar Placeholder
-            RoundedRectangle(cornerRadius: 10)
-                .fill(isHealthKitAuthorized ? Color.green : Color.gray)
-                .frame(height: 20)
-                .padding()
-
-            // Start Button
-            Button(action: {
-                    requestHealthKitAuthorization()
-                
-            }) {
-                Text(isHealthKitAuthorized ? "Tap here to workout" : "Tap here to start")
-                    .foregroundColor(.blue)
-                    .padding()
+            VStack {
+                staminaBarView.stressFunction(heart_rate: healthKitModel.latestHeartRate)
             }
-            .background(Color.clear)
-            .cornerRadius(10)
-            .buttonStyle(PlainButtonStyle())
-        }
-        
-    }
-
-    private func requestHealthKitAuthorization() {
-        let healthStore = HKHealthStore()
-        let allTypes = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!])
-
-        healthStore.requestAuthorization(toShare: nil, read: allTypes) { (success, error) in
-            DispatchQueue.main.async {
-                if success {
-                    self.isHealthKitAuthorized = true
-                } else {
-                    // Handle the error or the case where user denies authorization
+            .tag(0)
+            .containerBackground(colorForHeartRate(healthKitModel.latestHeartRate).gradient, for: .tabView)
+            
+            VStack(alignment: .trailing) {
+                staminaBarView.stressFunction(heart_rate: healthKitModel.latestHeartRate)
+                HStack {
+                    Text(healthKitModel.latestHeartRate.formatted(.number.precision(.fractionLength(0))) + " BPM")
+                        .font(.system(.body, design: .rounded).monospacedDigit().lowercaseSmallCaps())
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.red)
                 }
             }
+            .tag(1)
+            .containerBackground(colorForHeartRate(healthKitModel.latestHeartRate).gradient, for: .tabView)
+        }
+        .tabViewStyle(.verticalPage)
+    }
+
+    func colorForHeartRate(_ heartRate: Double) -> Color {
+        switch heartRate {
+        case ..<96:
+            return .blue
+        case 96..<120:
+            return .green
+        case 120..<150:
+            return .yellow
+        case 150..<180:
+            return .orange
+        default:
+            return .red
         }
     }
-}
-
-
-
-#Preview {
-    ContentView()
 }

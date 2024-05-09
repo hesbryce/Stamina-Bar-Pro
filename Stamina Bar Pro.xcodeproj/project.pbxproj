@@ -36,6 +36,8 @@
 		DA7D9E5F2BEC581F00A0D9F4 /* Stamina_Bar_Apple_Watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D9E332BEC533700A0D9F4 /* Stamina_Bar_Apple_Watch_Watch_AppUITests.swift */; };
 		DA7D9E602BEC581F00A0D9F4 /* Stamina_Bar_Apple_Watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D9E352BEC533700A0D9F4 /* Stamina_Bar_Apple_Watch_Watch_AppUITestsLaunchTests.swift */; };
 		DA7D9E632BEC5CC900A0D9F4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D9E622BEC5CC900A0D9F4 /* OnboardingView.swift */; };
+		DA7D9E652BEC618100A0D9F4 /* HealthKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D9E642BEC618100A0D9F4 /* HealthKitModel.swift */; };
+		DA7D9E672BEC6CC100A0D9F4 /* StaminaBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D9E662BEC6CC100A0D9F4 /* StaminaBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		DA7D9E542BEC546500A0D9F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA7D9E562BEC546500A0D9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA7D9E622BEC5CC900A0D9F4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DA7D9E642BEC618100A0D9F4 /* HealthKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitModel.swift; sourceTree = "<group>"; };
+		DA7D9E662BEC6CC100A0D9F4 /* StaminaBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaminaBarView.swift; sourceTree = "<group>"; };
 		DA8A9AC72BE5A15800E268C0 /* StaminaBarProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaminaBarProTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,12 +280,14 @@
 		DA7D9E172BEC533500A0D9F4 /* Stamina Bar Apple Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				DA7D9E442BEC53CB00A0D9F4 /* Stamina Bar Apple Watch Watch App.entitlements */,
-				DA7D9E182BEC533500A0D9F4 /* Stamina_Bar_Apple_WatchApp.swift */,
-				DA7D9E1A2BEC533500A0D9F4 /* ContentView.swift */,
 				DA7D9E1C2BEC533700A0D9F4 /* Assets.xcassets */,
-				DA7D9E1E2BEC533700A0D9F4 /* Preview Content */,
+				DA7D9E1A2BEC533500A0D9F4 /* ContentView.swift */,
+				DA7D9E642BEC618100A0D9F4 /* HealthKitModel.swift */,
 				DA7D9E622BEC5CC900A0D9F4 /* OnboardingView.swift */,
+				DA7D9E662BEC6CC100A0D9F4 /* StaminaBarView.swift */,
+				DA7D9E182BEC533500A0D9F4 /* Stamina_Bar_Apple_WatchApp.swift */,
+				DA7D9E442BEC53CB00A0D9F4 /* Stamina Bar Apple Watch Watch App.entitlements */,
+				DA7D9E1E2BEC533700A0D9F4 /* Preview Content */,
 			);
 			path = "Stamina Bar Apple Watch Watch App";
 			sourceTree = "<group>";
@@ -652,7 +658,9 @@
 			files = (
 				DA7D9E632BEC5CC900A0D9F4 /* OnboardingView.swift in Sources */,
 				DA7D9E1B2BEC533500A0D9F4 /* ContentView.swift in Sources */,
+				DA7D9E652BEC618100A0D9F4 /* HealthKitModel.swift in Sources */,
 				DA7D9E192BEC533500A0D9F4 /* Stamina_Bar_Apple_WatchApp.swift in Sources */,
+				DA7D9E672BEC6CC100A0D9F4 /* StaminaBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
