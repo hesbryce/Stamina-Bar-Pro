@@ -63,7 +63,7 @@ class HealthKitModel: ObservableObject {
         DispatchQueue.main.async {
             self.latestHeartRate = heartRateSamples.last?.quantity.doubleValue(for: HKUnit(from: "count/min")) ?? 0
             self.isHeartRateAvailable = !heartRateSamples.isEmpty
-            print("Latest Heart Rate: \(self.latestHeartRate)")
+            // print("Latest Heart Rate: \(self.latestHeartRate)")
         }
     }
 }

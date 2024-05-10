@@ -859,7 +859,7 @@
 				DEVELOPMENT_TEAM = 339H39SFM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Stamina Bar Pro would like to access and update Health data listed above to help you track your mental and physical health goals.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "The listed Health data is used as input for each message you send to your A.I. Personal Trainer. Please select Turn On All.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow Stamina Bar Pro to write new data to Health ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -897,7 +897,7 @@
 				DEVELOPMENT_TEAM = 339H39SFM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Stamina Bar Pro would like to access and update Health data listed above to help you track your mental and physical health goals.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "The listed Health data is used as input for each message you send to your A.I. Personal Trainer. Please select Turn On All.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please allow Stamina Bar Pro to write new data to Health ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

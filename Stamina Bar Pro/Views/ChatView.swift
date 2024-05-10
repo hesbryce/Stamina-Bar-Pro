@@ -29,10 +29,8 @@ struct ChatView: View {
             HStack {
                 TextField("⌨️ Enter a message...", text: $viewModel.currentInput)
                     .padding(10)
-                
                     .background(Color(UIColor.secondarySystemBackground))
                     .foregroundColor(Color.primary)
-                
                     .cornerRadius(20)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
@@ -74,7 +72,6 @@ struct ChatView: View {
                 .padding()
                 .background(message.role == .user ? Color.blue : Color.gray.opacity(0.2))
                 .foregroundColor(message.role == .user ? .white : .primary) // Adjusted for better text visibility
-
                 .cornerRadius(15)
                 .textSelection(.enabled)
             
