@@ -16,15 +16,13 @@ extension ChatView {
             self.workoutManager = workoutManager
         }
         
-        @Published var messages: [Message] = [Message(id: "first-message", role: .system, content: "Act as an A.I. Personal Trainer, with a deep understanding in with expertise building Stamina, by monitoring 1). Carido Fitness (V02 Max), 2) Wellness (heart rate variability (HRV)); 3) heart rate management, 4) step count and estimating it to distance in miles, 5) and calories burned (basal and or active) to give proper caloric intake insights. You are also able to provide functional workouts and recovery management. If a user asks a question very unrelated to their health ask them to revise their question. When users ask a good question, such as inquries about their health or creating exercise plans, leverage health data to inform, motivate, and create actionable responses that will help users grow their physical and mental health goals overtime. Help the users know if their Stamina is growing. At the very end of your response cite your sources.", createAt: Date())]
+        @Published var messages: [Message] = [Message(id: "first-message", role: .system, content: "Act as an intelligent A.I. Personal Trainer, with expertise in building Stamina. Users will ask you for advice on their daily health stats and movement, with a goal to build their Cardiovascular Fitness. Your personality is encouraging, empathetic, and conversational. Your task is to help users monitor and understand their stamina by noting trends in 1). Carido Fitness also known as (V02 Max). 2) Heart Rate Variability (HRV) is an essential monitor for your Wellness and Recovery, encourage deep breathing and stress-management to increase HRV. 3) Heart rate Monitoring and management.  4) Step count and translating it to distance in miles. 5) Basal calories burned to help target needed caloric intake. You are also able to provide functional workouts and recovery management. If a user asks a question very unrelated to their health ask them to revise their question. When users ask a good question, such as inquries about their health or creating exercise plans, leverage health data to engage in a conversation that's informative, motivating, and has actionable responses to help users grow their Stamina overtime. Asking clarifying questions are encouraged. At the very end of your response cite your sources.", createAt: Date())]
         
         @Published var currentInput: String = ""
         
         private let openAIService = OpenAIService()
         
         func sendMessage() {
-            
-            
             // First, process the user's input as a separate message
             processUserMessage()
             
@@ -56,44 +54,21 @@ extension ChatView {
                         let streamResponse = self.parseStreamData(string)
                         self.handleStreamResponse(streamResponse)
                     case .failure(_):
+                        // TODO: Some visual UI to explain error
                         print("Something failed")
                     }
                 case .complete(_):
+                    // TODO: Haptic Feedback that response is done
                     print("COMPLETE")
                 }
             }
         }
         
-        // Aggregate HealthKit data
         private func fetchHealthKitData(completion: @escaping (String) -> Void) {
             var healthDataPrompts = [String]()
-            
             let group = DispatchGroup()
             
-            group.enter()
-            workoutManager.fetchDailySteps { steps, error in
-                if let steps = steps {
-                    healthDataPrompts.append("Health Data: \(Int(steps)) steps taken today.")
-                }
-                group.leave()
-            }
-            
-            group.enter()
-            workoutManager.fetchHeartRate { heartRate, error in
-                if let heartRate = heartRate {
-                    healthDataPrompts.append("Health Data: \(Int(heartRate)) heart rate.")
-                }
-                group.leave()
-            }
-            
-            group.enter()
-            workoutManager.fetchDailyBasalEnergyBurned { basalEnergy, error in
-                if let basalEnergy = basalEnergy {
-                    healthDataPrompts.append("Health Data: \(Int(basalEnergy)) basal energy.")
-                }
-                group.leave()
-            }
-            
+            // 1
             group.enter()
             workoutManager.fetchVO2Max { v02Max, error in
                 if let v02Max = v02Max {
@@ -102,10 +77,38 @@ extension ChatView {
                 group.leave()
             }
             
+            // 2
             group.enter()
             workoutManager.fetchHeartRateVariability { heartRateVariability, error in
                 if let heartRateVariability = heartRateVariability {
                     healthDataPrompts.append("Health Data: \(Int(heartRateVariability)) Heart Rate variability")
+                }
+                group.leave()
+            }
+            
+            // 3
+            group.enter()
+            workoutManager.fetchHeartRate { heartRate, error in
+                if let heartRate = heartRate {
+                    healthDataPrompts.append("Health Data: \(Int(heartRate)) heart rate.")
+                }
+                group.leave()
+            }
+            
+            // 4
+            group.enter()
+            workoutManager.fetchDailySteps { steps, error in
+                if let steps = steps {
+                    healthDataPrompts.append("Health Data: \(Int(steps)) steps taken today.")
+                }
+                group.leave()
+            }
+            
+            // 5
+            group.enter()
+            workoutManager.fetchDailyBasalEnergyBurned { basalEnergy, error in
+                if let basalEnergy = basalEnergy {
+                    healthDataPrompts.append("Health Data: \(Int(basalEnergy)) basal energy.")
                 }
                 group.leave()
             }
