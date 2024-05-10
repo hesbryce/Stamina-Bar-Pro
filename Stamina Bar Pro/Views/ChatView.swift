@@ -18,7 +18,7 @@ struct ChatView: View {
                 .bold()
                 .font(.title)
             Divider()
-            Text("Use the textbox at the bottom to ask questions about your health stats or create a training plan.")
+            Text("Say, \"Hello!\" to start a conversation with your A.I. Personal Trainer.")
             
             ScrollView {
                 ForEach(viewModel.messages.filter({$0.role != .system}), id: \.id) { message in
@@ -27,7 +27,7 @@ struct ChatView: View {
             }
             
             HStack {
-                TextField("⌨️ Enter a message...", text: $viewModel.currentInput)
+                TextField("💬 Enter a message...", text: $viewModel.currentInput)
                     .padding(10)
                     .background(Color(UIColor.secondarySystemBackground))
                     .foregroundColor(Color.primary)

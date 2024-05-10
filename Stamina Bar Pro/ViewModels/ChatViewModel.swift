@@ -59,7 +59,7 @@ extension ChatView {
                     }
                 case .complete(_):
                     // TODO: Haptic Feedback that response is done
-                    print("COMPLETE")
+                    print(Date())
                 }
             }
         }
